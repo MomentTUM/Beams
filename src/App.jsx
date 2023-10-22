@@ -1,9 +1,9 @@
-import NewsFeed from './pages/NewsFeed';
+import Router from "./Routers/Router";
 
 function App() {
   return (
     <>
-      <NewsFeed/>
+      <Router/>
     </>
   )
 }
