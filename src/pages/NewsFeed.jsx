@@ -1,7 +1,13 @@
-// import BoxContent from '../components/BoxContent';
+import { useNavigate } from 'react-router-dom';
 import picNews from '../assets/pictures/dda4a59d4ba81631965cf2abafcd41d4.png';
 
 export default function NewsFeed() {
+  const navigate = useNavigate();
+
+  const handleClickDetailFeed = () => {
+    navigate('/DetailFeed');
+  };
+
   return (
     <div className='flex'>
       <div className='w-full h-1/2 relative text-left'>
@@ -12,12 +18,12 @@ export default function NewsFeed() {
           Get unlimited design & development requests for a flat monthly rate. Fast turnaround. No
           contracts or surprises.
         </p>
-        {/* <Link
-              to="#"
-            //   className='px-4 absolute -bottom-14 left-10 py-2 text-sm font-sans font-medium text-center text-white transition duration-300 rounded-lg hover:from-[#fe2626] hover:to-[#ff7300] ease bg-gradient-to-br from-[#FE5226] to-[#FF9900] md:w-auto'
-            >
-              Read more...
-            </Link> */}
+        <button
+          onClick={handleClickDetailFeed}
+          className='px-4 absolute -bottom-14 left-10 py-2 text-sm font-sans font-medium text-center text-white transition duration-300 rounded-lg hover:from-[#fe2626] hover:to-[#ff7300] ease bg-gradient-to-br from-[#FE5226] to-[#FF9900] md:w-auto'
+        >
+          Read more...
+        </button>
         <div className='flex gap-1 absolute -bottom-52 cursor-pointer'>
           <img src='images/image 7.png' alt='df' className='w-10 h-10' />
           <img src='images/image 8.png' alt='df' className='w-10 h-10' />
@@ -36,8 +42,3 @@ export default function NewsFeed() {
     </div>
   );
 }
-
-//   <div className='h-screen flex relative items-center justify-center z-0 bg-[#F1F1F1] space-x-8 overflow-hidden'>
-//     <BoxContent/>
-//   <div className='w-[600px] h-[600px] absolute aspect-auto -bottom-24 -left-32 -z-10  bg-[#FE5226] rounded-full'/>
-// </div>

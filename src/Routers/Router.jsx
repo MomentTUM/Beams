@@ -2,6 +2,7 @@ import React from 'react';
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 import Layout from '../components/Layout';
 import NewsFeed from '../pages/NewsFeed';
+import DetailFeed from '../pages/DetailFeed'
 import Register from '../pages/Register';
 import Login from '../pages/Login';
 import Member from '../pages/Member';
@@ -13,6 +14,7 @@ export default function Router() {
       element: <Layout />,
       children: [
         { path: '/', element: <NewsFeed /> },
+        { path: '/DetailFeed', element: <DetailFeed /> },
         { path: '/login', element: <Login /> },
         { path: '/register', element: <Register /> },
         { path: '/member', element: <Member /> },
@@ -21,5 +23,5 @@ export default function Router() {
     }
   ]);
 
-  return <RouterProvider router={router} />;
+  return <RouterProvider router={router}/>
 }

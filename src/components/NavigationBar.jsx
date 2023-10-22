@@ -1,9 +1,20 @@
 import Logo from '../assets/pictures/beams.png';
+import { useNavigate } from 'react-router-dom';
 
-export default function NavigationBar(params) {
+export default function NavigationBar() {
+  const navigate = useNavigate();
+
+  const handleClickLogin = () => {
+    navigate('/login');
+  };
+
+  const handleClickFeed = () => {
+    navigate('/');
+  };
+
   return (
     <nav className='flex p-1 gap-5 mb-3'>
-      <div className='w-1/12 ml-2'>
+      <div onClick={handleClickFeed} className='w-1/12 ml-2 cursor-pointer'>
         <img src={Logo} alt='Logo' className='w-full h-full object-fill' />
       </div>
       <div className='w-full flex items-center'>
@@ -48,8 +59,8 @@ export default function NavigationBar(params) {
         </div>
 
         <a
-          href='#_'
-          className='relative inline-flex items-center justify-start w-14 h-14 overflow-hidden font-medium transition-all bg-[#FE5226] rounded-full hover:bg-[#F1F1F1] group'
+          onClick={handleClickLogin}
+          className='relative inline-flex cursor-pointer items-center justify-start w-14 h-14 overflow-hidden font-medium transition-all bg-[#FE5226] rounded-full hover:bg-[#F1F1F1] group'
         >
           <span className='absolute inset-0 border-0 group-hover:border-[25px] ease-linear duration-100 transition-all border-white rounded-full'></span>
           <span className='relative w-full text-center font-sans font-medium text-white transition-colors duration-200 ease-in-out group-hover:text-[#FE5226]'>
